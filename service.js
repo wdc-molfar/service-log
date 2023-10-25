@@ -8,6 +8,16 @@ let service = new ServiceWrapper({
     config: null,
     logger: null,
 
+
+    //-------------- Add heartbeat exported method
+
+         async onHeartbeat(data, resolve){
+            resolve({})
+        },
+ 
+    //--------------------------------------------
+
+
     async onConfigure(config, resolve) {
         this.config = config
         const logFile = this.config.service.config.log
